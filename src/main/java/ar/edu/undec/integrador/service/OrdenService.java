@@ -30,7 +30,7 @@ public class OrdenService {
                 .orElseThrow(() -> new RecursoNoEncontradoException("Vehículo no encontrado"));
 
         List<EstadoOrden> estadosCerrados = List.of(EstadoOrden.ENTREGADO, EstadoOrden.CANCELADO);
-        if (ordenRepository.existsByVehiculoIdAndEstadoNotIn(vehiculo.getId(), estadosCerrados)) {
+        if (ordenRepository.existsByVehiculo_IdAndEstadoNotIn(vehiculo.getId(), estadosCerrados)) {
             throw new ReglaDeNegocioException("El vehículo ya tiene una orden abierta");
         }
 

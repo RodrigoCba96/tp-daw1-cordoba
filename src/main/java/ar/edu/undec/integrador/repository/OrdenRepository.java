@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface OrdenRepository extends JpaRepository<Orden, Long> {
     List<Orden> findByEstado(EstadoOrden estado);
-    boolean existsByVehiculoIdAndEstadoNotIn(Long vehiculoId, List<EstadoOrden> estados);
+    boolean existsByVehiculo_IdAndEstadoNotIn(Long vehiculoId, List<EstadoOrden> estados);
 }
