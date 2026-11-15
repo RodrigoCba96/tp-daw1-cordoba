@@ -51,9 +51,9 @@ public class VehiculoService {
         if (!clienteRepository.existsById(clienteId)) {
             throw new RecursoNoEncontradoException("Cliente no encontrado");
         }
-        return vehiculoRepository.findByClienteId(clienteId);
+        return vehiculoRepository.findByCliente_Id(clienteId);
     }
-
+    
     public Vehiculo actualizar(Long id, VehiculoRequestDTO dto) {
         Vehiculo vehiculo = obtenerPorId(id);
         if (!vehiculo.getPatente().equals(dto.patente()) && vehiculoRepository.existsByPatente(dto.patente())) {
